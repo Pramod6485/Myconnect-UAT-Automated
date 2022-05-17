@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.MyconnectUATRegisterAndLogin.LearnerRegisterNoMembershipChargeTestCase">
+      <class name="com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase">
         <methods>
-          <include name="testLearnerRegisterNoMembershipChargeTestCase"/>
-          <include name="setUp"/>
+          <include name="testLoginOnNoMembershipChargeLearnerTestCase"/>
         </methods>
-      </class> <!-- com.example.MyconnectUATRegisterAndLogin.LearnerRegisterNoMembershipChargeTestCase -->
+      </class> <!-- com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
