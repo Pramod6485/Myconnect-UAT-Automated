@@ -24,8 +24,8 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.manage().window().maximize();
-    System.setProperty("webdriver.edge.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\\\driver\\msedgedriver.exe");
-    driver = new EdgeDriver();
+    //System.setProperty("webdriver.edge.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\\\driver\\msedgedriver.exe");
+    //driver = new EdgeDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().deleteAllCookies();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -37,11 +37,8 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
 	
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/login");
     driver.findElement(By.linkText("Register here")).click();
-    driver.get("https://connected.uat.myconnect.olivegroup.io/learner/register");
-    driver.findElement(By.id("email")).click();
-    driver.findElement(By.id("email")).clear();
     Thread.sleep(1500);
-    driver.findElement(By.id("email")).sendKeys("payment.lea6@yopmail.com");
+    driver.findElement(By.id("email")).sendKeys("payment.lea8@yopmail.com");
     Thread.sleep(1500);
     driver.findElement(By.id("password")).sendKeys("P@ssword12");
     Thread.sleep(1500);
@@ -60,31 +57,20 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     Thread.sleep(5000);
     driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/button")).click();
     Thread.sleep(1500);
-    driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/div/div/button")).click();
-    Thread.sleep(5000);
     driver.findElement(By.id("email")).clear();
     Thread.sleep(1500);
     driver.findElement(By.id("email")).sendKeys("pramod.learner34@yopmail.com");
     Thread.sleep(1500);
-    driver.findElement(By.id("cardNumber")).click();
-    Thread.sleep(1000);
-    driver.findElement(By.id("cardNumber")).clear();
-    Thread.sleep(1000);
     driver.findElement(By.id("cardNumber")).sendKeys("4242 4242 4242 4242");
-    Thread.sleep(1000);
-    driver.findElement(By.id("cardExpiry")).clear();
     Thread.sleep(1000);
     driver.findElement(By.id("cardExpiry")).sendKeys("06 / 56");
     Thread.sleep(1000);
     driver.findElement(By.id("cardCvc")).sendKeys("145");
     Thread.sleep(1000);
-    driver.findElement(By.id("billingName")).clear();
-    Thread.sleep(1000);
     driver.findElement(By.id("billingName")).sendKeys("Pramod Phanait");
     Thread.sleep(1000);
-      driver.findElement(By.id("billingName")).click();
-    Thread.sleep(1000);
-    driver.findElement(By.id("billingCountry")).click();
+    new Select(driver.findElement(By.id("billingCountry"))).selectByVisibleText("Nepal");
+    Thread.sleep(2000);
 	driver.findElement(By.id("enableStripePass")).click();
     Thread.sleep(5000);
 	/*
@@ -97,31 +83,14 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
 	 * driver.findElement(By.id("phoneNumber")).sendKeys(""); Thread.sleep(1000);
 	 * driver.findElement(By.id("billingCountry")).click();
 	 */
-    new Select(driver.findElement(By.id("billingCountry"))).selectByVisibleText("Nepal");
-    Thread.sleep(1000);
     driver.findElement(By.id("phoneNumber")).sendKeys("987-8451578");
     js.executeScript("window.scrollBy(0,350)", "");
     Thread.sleep(2000);
     driver.findElement(By.xpath("//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
     Thread.sleep(4000);
-    Alert alert = driver.switchTo().alert();
-    Thread.sleep(1000);
-    //driver.get("https://connected.uat.myconnect.olivegroup.io/learner/register/in-progress?session_id=cs_test_a1vo03HW1YYCVWmI7EWdK9EFNqhQaBmFCCBWKhby3Pqn8cSPQq8Z1yiKWm");
-    //Thread.sleep(6000);
-    //driver.get("https://connected.uat.myconnect.olivegroup.io/learner/register");
-	/*
-	 * Thread.sleep(3000); driver.findElement(By.id("first_name")).click();
-	 * Thread.sleep(1000); driver.findElement(By.id("first_name")).clear();
-	 */
-    Thread.sleep(1000);
     driver.findElement(By.id("first_name")).sendKeys("Pramod6");
     Thread.sleep(1000);
 	driver.findElement(By.id("last_name")).sendKeys("Test6");
-    driver.findElement(By.name("firstName")).sendKeys("Pramod");
-    Thread.sleep(1000);
-    driver.findElement(By.name("lastName")).clear();
-    Thread.sleep(1000);
-    driver.findElement(By.name("lastName")).sendKeys("Registered");
     Thread.sleep(1000);
     //Click on Continue
     driver.findElement(By.xpath("//button[@type='button']")).click();
