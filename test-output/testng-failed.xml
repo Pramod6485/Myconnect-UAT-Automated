@@ -3,12 +3,28 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.example.MyconnectUAT.RegisterOnSubscripitionWithPaymentTestCase">
+=======
+<<<<<<< HEAD
+      <class name="com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase">
+        <methods>
+          <include name="testLoginOnNoMembershipChargeLearnerTestCase"/>
+        </methods>
+      </class> <!-- com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase -->
+=======
+      <class name="com.example.MyconnectUAT.ForgotPasswordTestCase">
+>>>>>>> a70318b2d2bc612ccf30d475616025d8ac19e183
         <methods>
           <include name="setUp"/>
           <include name="testRegisterOnSubscripitionWithPaymentTestCase"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.example.MyconnectUAT.RegisterOnSubscripitionWithPaymentTestCase -->
+=======
+      </class> <!-- com.example.MyconnectUAT.ForgotPasswordTestCase -->
+>>>>>>> ce69e4693926ae235c96597b6d44f25e17a3afcd
+>>>>>>> a70318b2d2bc612ccf30d475616025d8ac19e183
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

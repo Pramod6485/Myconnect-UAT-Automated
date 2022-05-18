@@ -2,7 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2022-05-18T13:11:57 NPT" name="Default suite" finished-at="2022-05-18T13:13:09 NPT" duration-ms="71972">
+=======
+<<<<<<< HEAD
+  <suite started-at="2022-05-17T14:14:07 NPT" name="Default suite" finished-at="2022-05-17T14:14:39 NPT" duration-ms="31912">
+    <groups>
+    </groups>
+    <test started-at="2022-05-17T14:14:07 NPT" name="Default test" finished-at="2022-05-17T14:14:39 NPT" duration-ms="31912">
+      <class name="com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase">
+        <test-method signature="testLoginOnNoMembershipChargeLearnerTestCase()[pri:0, instance:com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase@1e04fa0a]" started-at="2022-05-17T14:14:08 NPT" name="testLoginOnNoMembershipChargeLearnerTestCase" finished-at="2022-05-17T14:14:39 NPT" duration-ms="31767" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginOnNoMembershipChargeLearnerTestCase -->
+      </class> <!-- com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase -->
+=======
+  <suite started-at="2022-05-17T18:45:26 NPT" name="Default suite" finished-at="2022-05-17T18:46:46 NPT" duration-ms="79798">
+>>>>>>> a70318b2d2bc612ccf30d475616025d8ac19e183
     <groups>
     </groups>
     <test started-at="2022-05-18T13:11:57 NPT" name="Default test" finished-at="2022-05-18T13:13:09 NPT" duration-ms="71972">
@@ -14,8 +30,14 @@
         <test-method signature="testLoginOnOneTimeMembersTestCase()[pri:0, instance:com.example.MyconnectUAT.LoginOnOneTimeMembersTestCase@77888435]" started-at="2022-05-18T13:12:17 NPT" name="testLoginOnOneTimeMembersTestCase" finished-at="2022-05-18T13:13:09 NPT" duration-ms="51949" status="PASS">
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testLoginOnOneTimeMembersTestCase -->
       </class> <!-- com.example.MyconnectUAT.LoginOnOneTimeMembersTestCase -->
+=======
+        </test-method> <!-- testForgotPasswordTestCase -->
+      </class> <!-- com.example.MyconnectUAT.ForgotPasswordTestCase -->
+>>>>>>> ce69e4693926ae235c96597b6d44f25e17a3afcd
+>>>>>>> a70318b2d2bc612ccf30d475616025d8ac19e183
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

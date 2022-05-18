@@ -14,8 +14,10 @@ public class LoginOnNoMembershipChargeLearnerTestCase {
   
   @Test
   public void testLoginOnNoMembershipChargeLearnerTestCase() throws Exception {
+//	System.setProperty("webdriver.chrome.driver", "F:\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
 	System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
 	driver = new ChromeDriver();
+	driver.manage().window().maximize();
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/login");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
@@ -30,13 +32,11 @@ public class LoginOnNoMembershipChargeLearnerTestCase {
     Thread.sleep(1000);
     driver.findElement(By.xpath("//button[@type='button']")).click();
     Thread.sleep(1000);
-    driver.get("https://connected.uat.myconnect.olivegroup.io/hub/home");
-    Thread.sleep(1000);
     driver.findElement(By.id("imagetest")).click();
     Thread.sleep(1000);
     driver.findElement(By.id("logout")).click();
     Thread.sleep(3000);
-    driver.close();
+    driver.quit();
   }
 
 }
