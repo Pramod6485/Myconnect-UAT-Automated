@@ -17,7 +17,7 @@ public class RegisterOnNoMembershipChargeSettingTestCase {
   public void testRegisterOnNoMembershipChargeSettingTestCase() throws Exception {
 	  
 	  //Configuring the system properties of chrome driver
-	   System.setProperty("webdriver.chrome.driver", "Q:\\MyConnect Selenium Automation\\broswerdriver\\chromedriver.exe");
+	   System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
 	    
 	  //Initializing the browser driver
 	    driver = new ChromeDriver();
@@ -39,7 +39,7 @@ public class RegisterOnNoMembershipChargeSettingTestCase {
     driver.findElement(By.id("email")).click();
     Thread.sleep(1000);
     driver.findElement(By.id("email")).clear();
-    driver.findElement(By.id("email")).sendKeys("automate.pramod.learner258@yopmail.com");
+    driver.findElement(By.id("email")).sendKeys("automate.pramod.learner01@yopmail.com");
     Thread.sleep(1000);
     driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).clear();

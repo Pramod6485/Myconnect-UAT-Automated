@@ -3,11 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase">
         <methods>
           <include name="testLoginOnNoMembershipChargeLearnerTestCase"/>
         </methods>
       </class> <!-- com.example.MyconnectUAT.LoginOnNoMembershipChargeLearnerTestCase -->
+=======
+      <class name="com.example.MyconnectUAT.ForgotPasswordTestCase">
+        <methods>
+          <include name="setUp"/>
+          <include name="testForgotPasswordTestCase"/>
+        </methods>
+      </class> <!-- com.example.MyconnectUAT.ForgotPasswordTestCase -->
+>>>>>>> ce69e4693926ae235c96597b6d44f25e17a3afcd
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

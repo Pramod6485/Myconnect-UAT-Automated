@@ -14,7 +14,11 @@ public class LoginOnNoMembershipChargeLearnerTestCase {
   
   @Test
   public void testLoginOnNoMembershipChargeLearnerTestCase() throws Exception {
+<<<<<<< HEAD
 	System.setProperty("webdriver.chrome.driver", "F:\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
+=======
+	System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
+>>>>>>> ce69e4693926ae235c96597b6d44f25e17a3afcd
 	driver = new ChromeDriver();
 	driver.manage().window().maximize();
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/login");

@@ -15,7 +15,7 @@ public class RegisterOnOneTimeMemberWithoutPaymentTestCase {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    System.setProperty("webdriver.chrome.driver", "Q:\\MyConnect Selenium Automation\\broswerdriver\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
@@ -28,7 +28,7 @@ public class RegisterOnOneTimeMemberWithoutPaymentTestCase {
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/register");
     driver.findElement(By.id("email")).click();
     driver.findElement(By.id("email")).clear();
-    driver.findElement(By.id("email")).sendKeys("pramod.onetime.user1@yopmail.com");
+    driver.findElement(By.id("email")).sendKeys("pramod.onetime.user3133@yopmail.com");
     Thread.sleep(1200);
     driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).clear();
