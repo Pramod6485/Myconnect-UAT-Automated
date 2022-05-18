@@ -2,10 +2,12 @@ package com.example.MyconnectUAT;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,10 +21,11 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    //System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
     System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.manage().window().maximize();
+    System.setProperty("webdriver.edge.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\\\driver\\msedgedriver.exe");
+    driver = new EdgeDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().deleteAllCookies();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -39,8 +42,7 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     driver.findElement(By.id("email")).clear();
     Thread.sleep(1500);
     driver.findElement(By.id("email")).sendKeys("payment.lea6@yopmail.com");
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).clear();
+    Thread.sleep(1500);
     driver.findElement(By.id("password")).sendKeys("P@ssword12");
     Thread.sleep(1500);
     driver.findElement(By.xpath("//input[@type='checkbox']")).click();
@@ -57,11 +59,9 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     js.executeScript("window.scrollBy(0,350)", "");
     Thread.sleep(5000);
     driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/button")).click();
-    //Thread.sleep(2000);
-    //driver.get("https://checkout.stripe.com/pay/cs_test_a1EcmnCjQl17NX1ncDyegbnSCloq7E5XLSd3gm1xSZtaFzCzY14w4Pi7C2#fidkdWxOYHwnPyd1blpxYHZxWjxsbm1DcF9dYk9jdU0yTmY0Sj1tV0JiZCcpJ2hsYXYnP34nYnBsYSc%2FJzE1M2Q2NjZgKDI8MzIoMTNhNChkPTdnKDQ8ZzYxNzdjMGc9PGFkYGMyZycpJ2hwbGEnPyc1YWAzYzw9Nig2MDU9KDE0PWcoZGEzZihgZGc3NWM8Y2ZkMzAxNWExYDcnKSd2bGEnPyc0NTcxMjQ0MShkYTBgKDE3PDEoPDVnYSgxNTIyMjFgMjBgZDw3YDY9MmMneCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqZmpra2BmcWBhK3BkcStofGZqa2tgZnEramlsc2Bid2pwdStsaid4JSUl");
-    Thread.sleep(5000);
-    driver.findElement(By.id("email")).click();
     Thread.sleep(1500);
+    driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/div/div/button")).click();
+    Thread.sleep(5000);
     driver.findElement(By.id("email")).clear();
     Thread.sleep(1500);
     driver.findElement(By.id("email")).sendKeys("pramod.learner34@yopmail.com");
@@ -103,6 +103,8 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     js.executeScript("window.scrollBy(0,350)", "");
     Thread.sleep(2000);
     driver.findElement(By.xpath("//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
+    Thread.sleep(4000);
+    Alert alert = driver.switchTo().alert();
     Thread.sleep(1000);
     //driver.get("https://connected.uat.myconnect.olivegroup.io/learner/register/in-progress?session_id=cs_test_a1vo03HW1YYCVWmI7EWdK9EFNqhQaBmFCCBWKhby3Pqn8cSPQq8Z1yiKWm");
     //Thread.sleep(6000);
@@ -115,6 +117,11 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     driver.findElement(By.id("first_name")).sendKeys("Pramod6");
     Thread.sleep(1000);
 	driver.findElement(By.id("last_name")).sendKeys("Test6");
+    driver.findElement(By.name("firstName")).sendKeys("Pramod");
+    Thread.sleep(1000);
+    driver.findElement(By.name("lastName")).clear();
+    Thread.sleep(1000);
+    driver.findElement(By.name("lastName")).sendKeys("Registered");
     Thread.sleep(1000);
     //Click on Continue
     driver.findElement(By.xpath("//button[@type='button']")).click();
@@ -137,45 +144,4 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     
   }
 
-//  @AfterClass(alwaysRun = true)
-//  public void tearDown() throws Exception {
-//    driver.quit();
-//    String verificationErrorString = verificationErrors.toString();
-//    if (!"".equals(verificationErrorString)) {
-//      fail(verificationErrorString);
-//    }
-//  }
-//
-//  private boolean isElementPresent(By by) {
-//    try {
-//      driver.findElement(by);
-//      return true;
-//    } catch (NoSuchElementException e) {
-//      return false;
-//    }
-//  }
-//
-//  private boolean isAlertPresent() {
-//    try {
-//      driver.switchTo().alert();
-//      return true;
-//    } catch (NoAlertPresentException e) {
-//      return false;
-//    }
-//  }
-//
-//  private String closeAlertAndGetItsText() {
-//    try {
-//      Alert alert = driver.switchTo().alert();
-//      String alertText = alert.getText();
-//      if (acceptNextAlert) {
-//        alert.accept();
-//      } else {
-//        alert.dismiss();
-//      }
-//      return alertText;
-//    } finally {
-//      acceptNextAlert = true;
-//    }
-//  }
 }

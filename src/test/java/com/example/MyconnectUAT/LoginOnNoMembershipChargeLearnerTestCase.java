@@ -7,9 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 public class LoginOnNoMembershipChargeLearnerTestCase {
@@ -18,10 +15,9 @@ public class LoginOnNoMembershipChargeLearnerTestCase {
   
   @Test
   public void testLoginOnNoMembershipChargeLearnerTestCase() throws Exception {
-	
-	System.setProperty("webdriver.gecko.driver", "F:\\Myconnect-UAT-Automated\\driver\\geckodriver.exe");
-	
-	driver = new FirefoxDriver();
+	//System.setProperty("webdriver.chrome.driver", "F:\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
+	driver = new ChromeDriver();
 	driver.manage().window().maximize();
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/login");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
