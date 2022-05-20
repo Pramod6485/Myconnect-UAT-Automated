@@ -13,7 +13,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class RegisterWithVoucherCode {
+public class RegisterWithVoucherCodeOTP {
 	private WebDriver driver;
 	private JavascriptExecutor js;
 	private String memsubscriptionvoucher = "SCIBreUg";	//Never Expires
