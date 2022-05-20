@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.MyconnectUAT.RegisterWithVoucherCode">
+      <class name="com.example.MyconnectUAT.RegisterWithoutVoucherCodeYearly">
         <methods>
+          <include name="setUp"/>
           <include name="closebrowser"/>
           <include name="initialize"/>
-          <include name="setUp"/>
         </methods>
-      </class> <!-- com.example.MyconnectUAT.RegisterWithVoucherCode -->
+      </class> <!-- com.example.MyconnectUAT.RegisterWithoutVoucherCodeYearly -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

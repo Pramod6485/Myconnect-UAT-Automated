@@ -122,7 +122,7 @@ public class RegisterWithVoucherCodeYearlyOTP {
 	  }
 	  @AfterTest
 	  public void closebrowser() {
-		 // driver.close();
+		  driver.close();
 	  }
 }
 

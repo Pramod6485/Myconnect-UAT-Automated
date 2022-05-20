@@ -2,7 +2,6 @@ package com.example.MyconnectUAT;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,11 +12,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class RegisterWithVoucherCodeOTP {
+public class RegisterWithoutVoucherCodeOTP {
 	private WebDriver driver;
 	private JavascriptExecutor js;
-	private String memsubscriptionvoucher = "SCIBreUg";	//Never Expires
-	  
+	private String url = "https://creditpay.uat.myconnect.olivegroup.io/learner/login";
+	
    @BeforeTest
 	public void setUp() throws Exception {
 		  System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
@@ -30,13 +29,14 @@ public class RegisterWithVoucherCodeOTP {
 	  
 	  @Test
 	  public void initialize() throws InterruptedException {
-		driver.get("https://creditpay.uat.myconnect.olivegroup.io/learner/login");
-		    driver.findElement(By.linkText("Register here")).click();
-		  //Click on Cookies button
+		  driver.get(url);
+		  driver.get(url);
+		  driver.findElement(By.linkText("Register here")).click();
+		    //Click on Cookies button
 		    driver.findElement(By.xpath("//*[@id=\"body\"]/div[1]/div/a[1]")).click();
 		    js.executeScript("window.scrollBy(0,350)", "");
 		    Thread.sleep(1500);
-		    driver.findElement(By.id("email")).sendKeys("automateuser4@yopmail.com");
+		    driver.findElement(By.id("email")).sendKeys("automateOTPuser1@yopmail.com");
 		    Thread.sleep(1500);
 		    driver.findElement(By.id("password")).sendKeys("Hiup@123");
 		    Thread.sleep(1500);
@@ -47,32 +47,25 @@ public class RegisterWithVoucherCodeOTP {
 		    Thread.sleep(1500);
 		    driver.findElement(By.id("inlineRadio1")).click();
 		    Thread.sleep(1500);
-		    WebElement voucher = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/div/input"));
-		    System.out.print("Voucher code" + voucher);
-		    //Enter Voucher Code
-		    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/div/input")).sendKeys(memsubscriptionvoucher);
-		    Thread.sleep(2000);
 		    
-		    //Click Apply Button
-		    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/div/div/button")).click();
-		    Thread.sleep(5000);
 		    //ScrollDown
-		    js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		    Thread.sleep(3000);
+		   // js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		    //Thread.sleep(3000);
+		    
 		    //Click Pay Button
 		    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/button")).click();
 		    Thread.sleep(2000);
 		    driver.findElement(By.id("email")).clear();
 		    Thread.sleep(1500);
-		    driver.findElement(By.id("email")).sendKeys("automateuser3@yopmail.com");
+		    driver.findElement(By.id("email")).sendKeys("automateOTPuser1@yopmail.com");
 		    Thread.sleep(1500);
 		    driver.findElement(By.id("cardNumber")).sendKeys("4242 4242 4242 4242");
 		    Thread.sleep(1000);
-		    driver.findElement(By.id("cardExpiry")).sendKeys("06 / 56");
+		    driver.findElement(By.id("cardExpiry")).sendKeys("06 / 23");
 		    Thread.sleep(1000);
-		    driver.findElement(By.id("cardCvc")).sendKeys("145");
+		    driver.findElement(By.id("cardCvc")).sendKeys("124");
 		    Thread.sleep(1000);
-		    driver.findElement(By.id("billingName")).sendKeys("Autoeuser2");
+		    driver.findElement(By.id("billingName")).sendKeys("Autouser1");
 		    Thread.sleep(1000);
 		    new Select(driver.findElement(By.id("billingCountry"))).selectByVisibleText("Nepal");
 		    Thread.sleep(2000);
@@ -83,11 +76,15 @@ public class RegisterWithVoucherCodeOTP {
 		    js.executeScript("window.scrollBy(0,350)", "");
 		    Thread.sleep(2000);
 		    //Click Pay Button
-		    driver.findElement(By.xpath("//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
+		    WebElement stripepaybutton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]"));
+		    js.executeScript("arguments[0].scrollIntoView();", stripepaybutton);
+		    stripepaybutton.click();
+
+		   // driver.findElement(By.xpath("//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
 		    Thread.sleep(5000);
-		    driver.findElement(By.id("first_name")).sendKeys("Automate User3");
+		    driver.findElement(By.id("first_name")).sendKeys("Automate OTP User1");
 		    Thread.sleep(2000);
-			driver.findElement(By.id("last_name")).sendKeys("Test2");
+			driver.findElement(By.id("last_name")).sendKeys("Test");
 		    Thread.sleep(2000);
 		    //Click on Continue
 		    driver.findElement(By.xpath("//button[@type='button']")).click();
@@ -117,6 +114,4 @@ public class RegisterWithVoucherCodeOTP {
 	  public void closebrowser() {
 		  driver.close();
 	  }
-	  
-
 }
