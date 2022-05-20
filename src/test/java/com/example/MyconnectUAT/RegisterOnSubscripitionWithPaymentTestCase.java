@@ -38,7 +38,7 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/login");
     driver.findElement(By.linkText("Register here")).click();
     Thread.sleep(1500);
-    driver.findElement(By.id("email")).sendKeys("payment.lea8@yopmail.com");
+    driver.findElement(By.id("email")).sendKeys("payment.lea9@yopmail.com");
     Thread.sleep(1500);
     driver.findElement(By.id("password")).sendKeys("P@ssword12");
     Thread.sleep(1500);
@@ -67,7 +67,7 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     Thread.sleep(1000);
     driver.findElement(By.id("cardCvc")).sendKeys("145");
     Thread.sleep(1000);
-    driver.findElement(By.id("billingName")).sendKeys("Pramod Phanait");
+    driver.findElement(By.id("billingName")).sendKeys("Pramod");
     Thread.sleep(1000);
     new Select(driver.findElement(By.id("billingCountry"))).selectByVisibleText("Nepal");
     Thread.sleep(2000);
@@ -88,9 +88,9 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     Thread.sleep(2000);
     driver.findElement(By.xpath("//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
     Thread.sleep(4000);
-    driver.findElement(By.id("first_name")).sendKeys("Pramod6");
+    driver.findElement(By.id("first_name")).sendKeys("Pramod9");
     Thread.sleep(1000);
-	driver.findElement(By.id("last_name")).sendKeys("Test6");
+	driver.findElement(By.id("last_name")).sendKeys("Test9");
     Thread.sleep(1000);
     //Click on Continue
     driver.findElement(By.xpath("//button[@type='button']")).click();
