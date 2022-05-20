@@ -95,8 +95,8 @@ public class OntimeMemberRegisterWithVoucherCode {
 		    js.executeScript("window.scrollBy(0,350)", "");
 		    Thread.sleep(2000);
 			/*
-			 * //Select Organization Color //driver.findElement(By.xpath(
-			 * "//div[@id='app']/div/div/div/div/div/div[5]/div/button")).click();
+			 * //Select Organization Color 
+			 * //driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/div[5]/div/button")).click();
 			 * //Thread.sleep(2000);
 			 * 
 			 * //Click Continue

@@ -3,12 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.example.MyconnectUAT.RegisterUsingVoucherCodeWithPercentageTrailDaysSBMC">
         <methods>
           <include name="setUp"/>
           <include name="testRegisterUsingVoucherCodeWithPercentageTrailDaysSBMC"/>
         </methods>
       </class> <!-- com.example.MyconnectUAT.RegisterUsingVoucherCodeWithPercentageTrailDaysSBMC -->
+=======
+      <class name="com.example.MyconnectUAT.RegisterWithoutVoucherCodeYearly">
+        <methods>
+          <include name="setUp"/>
+          <include name="closebrowser"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.example.MyconnectUAT.RegisterWithoutVoucherCodeYearly -->
+>>>>>>> 297569eae9080452a8f1549a600fa6f2fc6857e3
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
