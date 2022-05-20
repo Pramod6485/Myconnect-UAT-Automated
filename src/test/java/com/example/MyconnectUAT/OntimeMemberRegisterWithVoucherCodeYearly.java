@@ -14,7 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class RegisterWithVoucherCodeYearlyOTP {
+public class OntimeMemberRegisterWithVoucherCodeYearly {
 	private WebDriver driver;
 	private JavascriptExecutor js;
 	private String memsubscriptionvoucher = "SCIBreUg";	//Never Expires
@@ -23,7 +23,8 @@ public class RegisterWithVoucherCodeYearlyOTP {
 	
 	@BeforeTest
 	public void setUp() throws Exception {
-		  System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
+//		  System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
 		  options.addArguments("--disable-notifications");
 		  driver = new ChromeDriver(options);
 		  driver.manage().window().maximize();
@@ -43,7 +44,7 @@ public class RegisterWithVoucherCodeYearlyOTP {
 		    //Click on Cookies button
 		    driver.findElement(By.xpath("//*[@id=\"body\"]/div[1]/div/a[1]")).click();
 		    Thread.sleep(2000);
-		    driver.findElement(By.id("email")).sendKeys("automateuser5@yopmail.com");
+		    driver.findElement(By.id("email")).sendKeys("automat.pramod@yopmail.com");
 		    Thread.sleep(1500);
 		    driver.findElement(By.id("password")).sendKeys("Hiup@123");
 		    Thread.sleep(1500);
@@ -92,7 +93,7 @@ public class RegisterWithVoucherCodeYearlyOTP {
 		    js.executeScript("window.scrollTo(0, 1370)");
 		    Thread.sleep(2000);
 		    //Click Pay Button
-		    driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div/div/div/div/div/button")).click();
+		    driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
 		    Thread.sleep(5000);
 		    driver.findElement(By.id("first_name")).sendKeys("Automate User5");
 		    Thread.sleep(2000);
@@ -118,11 +119,14 @@ public class RegisterWithVoucherCodeYearlyOTP {
 		    Thread.sleep(3000);
 		    driver.findElement(By.xpath("//*[@id=\"imagetest\"]")).click();
 		    Thread.sleep(5000);
-		    driver.findElement(By.id("logout")).click();	       
+		    driver.findElement(By.id("logout")).click();
+		    Thread.sleep(1200);
+		    System.out.println("One Time Membership Charge Setting Learners has been successfully Registered Using Voucher Code With Payment");
+		    driver.close();
 	  }
-	  @AfterTest
-	  public void closebrowser() {
-		 // driver.close();
-	  }
+//	  @AfterTest
+//	  public void closebrowser() {
+//		 // driver.close();
+//	  }
 }
 

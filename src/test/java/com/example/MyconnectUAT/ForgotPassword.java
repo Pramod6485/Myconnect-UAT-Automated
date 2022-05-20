@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class ForgotPasswordTestCase {
+public class ForgotPassword {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
