@@ -79,7 +79,6 @@ public class RegisterWithoutVoucherCodeYearly {
 		    js.executeScript("arguments[0].scrollIntoView();", stripepaybutton);
 		    stripepaybutton.click();
 
-		   // driver.findElement(By.xpath("//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
 		    Thread.sleep(5000);
 		    driver.findElement(By.id("first_name")).sendKeys("Automate OTP User 2");
 		    Thread.sleep(2000);
