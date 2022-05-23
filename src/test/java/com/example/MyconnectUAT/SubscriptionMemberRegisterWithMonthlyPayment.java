@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class RegisterOnSubscripitionWithPaymentTestCase {
+public class SubscriptionMemberRegisterWithMonthlyPayment {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -21,11 +21,16 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
-    driver = new ChromeDriver();
-    driver.manage().window().maximize();
+//    System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
+//    driver = new ChromeDriver();
+//    driver.manage().window().maximize();
     //System.setProperty("webdriver.edge.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\\\driver\\msedgedriver.exe");
     //driver = new EdgeDriver();
+//    driver.manage().window().maximize();
+	    System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
+	    driver = new ChromeDriver();
+	    driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS); 
+	  
     baseUrl = "https://www.google.com/";
     driver.manage().deleteAllCookies();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -38,7 +43,7 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/login");
     driver.findElement(By.linkText("Register here")).click();
     Thread.sleep(1500);
-    driver.findElement(By.id("email")).sendKeys("payment.lea9@yopmail.com");
+    driver.findElement(By.id("email")).sendKeys("payment.lt@yopmail.com");
     Thread.sleep(1500);
     driver.findElement(By.id("password")).sendKeys("P@ssword12");
     Thread.sleep(1500);
@@ -109,7 +114,9 @@ public class RegisterOnSubscripitionWithPaymentTestCase {
     driver.findElement(By.xpath("//*[@id=\"imagetest\"]")).click();
     Thread.sleep(5000);
     driver.findElement(By.id("logout")).click();
+    Thread.sleep(1200);
     driver.close();
+    System.out.println("Subscribe Membership Charge Setting has been Successfully registered With Monthyl Payment");
     
   }
 

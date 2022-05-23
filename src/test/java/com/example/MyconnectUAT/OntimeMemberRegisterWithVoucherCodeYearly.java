@@ -8,35 +8,43 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class RegisterWithVoucherCodeOTP {
+public class OntimeMemberRegisterWithVoucherCodeYearly {
 	private WebDriver driver;
 	private JavascriptExecutor js;
 	private String memsubscriptionvoucher = "SCIBreUg";	//Never Expires
-	  
-   @BeforeTest
+	public ChromeOptions options = new ChromeOptions();
+	private String url = "https://creditpay.uat.myconnect.olivegroup.io/learner/login";
+	
+	@BeforeTest
 	public void setUp() throws Exception {
-		  System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
-		  driver = new ChromeDriver();
+//		  System.setProperty("webdriver.chrome.driver", "F:\\Automate\\MyConnect-Automate\\driver\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
+		  options.addArguments("--disable-notifications");
+		  driver = new ChromeDriver(options);
 		  driver.manage().window().maximize();
-	      driver.manage().deleteAllCookies();
+		  driver.manage().deleteAllCookies();
 		  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		 // By cookies_accept = By.xpath("")
 		  js = (JavascriptExecutor) driver;
 		  }
 	  
 	  @Test
 	  public void initialize() throws InterruptedException {
-		driver.get("https://creditpay.uat.myconnect.olivegroup.io/learner/login");
+		driver.get(url);
 		    driver.findElement(By.linkText("Register here")).click();
-		  //Click on Cookies button
-		    driver.findElement(By.xpath("//*[@id=\"body\"]/div[1]/div/a[1]")).click();
+		    Thread.sleep(2000);
 		    js.executeScript("window.scrollBy(0,350)", "");
-		    Thread.sleep(1500);
-		    driver.findElement(By.id("email")).sendKeys("automateuser4@yopmail.com");
+		    
+		    //Click on Cookies button
+		    driver.findElement(By.xpath("//*[@id=\"body\"]/div[1]/div/a[1]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.id("email")).sendKeys("automat.pramod@yopmail.com");
 		    Thread.sleep(1500);
 		    driver.findElement(By.id("password")).sendKeys("Hiup@123");
 		    Thread.sleep(1500);
@@ -47,24 +55,27 @@ public class RegisterWithVoucherCodeOTP {
 		    Thread.sleep(1500);
 		    driver.findElement(By.id("inlineRadio1")).click();
 		    Thread.sleep(1500);
-		    WebElement voucher = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/div/input"));
-		    System.out.print("Voucher code" + voucher);
+		    
 		    //Enter Voucher Code
 		    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/div/input")).sendKeys(memsubscriptionvoucher);
 		    Thread.sleep(2000);
-		    
-		    //Click Apply Button
+		    //CLICK APPLY BUTTON
 		    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/div/div/button")).click();
 		    Thread.sleep(5000);
-		    //ScrollDown
-		    js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		    Thread.sleep(3000);
+		    WebElement pay= driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/button"));
+		    // Scrolling down the page till the element is found
+		    //js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		    js.executeScript("arguments[0].scrollIntoView();", pay);
+		    Thread.sleep(5000);
+		    
 		    //Click Pay Button
+		    WebElement test = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/button/i"));
+		    System.out.print("continue-----------" + test.getText().toString());
 		    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div/div/div/div/button")).click();
-		    Thread.sleep(2000);
+		    Thread.sleep(1500);
 		    driver.findElement(By.id("email")).clear();
 		    Thread.sleep(1500);
-		    driver.findElement(By.id("email")).sendKeys("automateuser3@yopmail.com");
+		    driver.findElement(By.id("email")).sendKeys("automateuser5@yopmail.com");
 		    Thread.sleep(1500);
 		    driver.findElement(By.id("cardNumber")).sendKeys("4242 4242 4242 4242");
 		    Thread.sleep(1000);
@@ -78,14 +89,13 @@ public class RegisterWithVoucherCodeOTP {
 		    Thread.sleep(2000);
 			driver.findElement(By.id("enableStripePass")).click();
 		    Thread.sleep(5000);
-		
 		    driver.findElement(By.id("phoneNumber")).sendKeys("9804123654");
-		    js.executeScript("window.scrollBy(0,350)", "");
+		    js.executeScript("window.scrollTo(0, 1370)");
 		    Thread.sleep(2000);
 		    //Click Pay Button
-		    driver.findElement(By.xpath("//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
+		    driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]")).click();
 		    Thread.sleep(5000);
-		    driver.findElement(By.id("first_name")).sendKeys("Automate User3");
+		    driver.findElement(By.id("first_name")).sendKeys("Automate User5");
 		    Thread.sleep(2000);
 			driver.findElement(By.id("last_name")).sendKeys("Test2");
 		    Thread.sleep(2000);
@@ -97,8 +107,8 @@ public class RegisterWithVoucherCodeOTP {
 		    js.executeScript("window.scrollBy(0,350)", "");
 		    Thread.sleep(2000);
 			/*
-			 * //Select Organization Color 
-			 * //driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/div[5]/div/button")).click();
+			 * //Select Color //driver.findElement(By.xpath(
+			 * "//div[@id='app']/div/div/div/div/div/div[5]/div/button")).click();
 			 * //Thread.sleep(2000);
 			 * 
 			 * //Click Continue
@@ -109,14 +119,19 @@ public class RegisterWithVoucherCodeOTP {
 		    Thread.sleep(3000);
 		    driver.findElement(By.xpath("//*[@id=\"imagetest\"]")).click();
 		    Thread.sleep(5000);
-		    driver.findElement(By.id("logout")).click();
-		       
-	  }
-	  
-	  @AfterTest
-	  public void closebrowser() {
-		  driver.close();
-	  }
-	  
 
-}
+		    driver.findElement(By.id("logout")).click();
+		    Thread.sleep(1200);
+		    System.out.println("One Time Membership Charge Setting Learners has been successfully Registered Using Voucher Code With Payment");
+		    driver.close();
+
+		    driver.findElement(By.id("logout")).click();	
+		    Thread.sleep(1000);
+		    driver.close();
+		    
+	  }
+
+
+	}
+
+

@@ -8,10 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class RegisterOnOnetimeMembersWithPaymentTestCase {
+public class OntimeMemberRegisterWithMonthlyPayment {
   private WebDriver driver;
-  private JavascriptExecutor js;
-
   @Test
   public void testRegisterOnOnetimeMembersTestCase() throws Exception {
 	    System.setProperty("webdriver.chrome.driver", "P:\\Myconnect Automation With Selenium\\Myconnect-UAT-Automated\\driver\\chromedriver.exe");
@@ -20,11 +18,10 @@ public class RegisterOnOnetimeMembersWithPaymentTestCase {
     driver.findElement(By.linkText("Register here")).click();
     driver.get("https://connected.uat.myconnect.olivegroup.io/learner/register");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    js = (JavascriptExecutor) driver;
     driver.findElement(By.id("email")).click();
     driver.findElement(By.id("email")).click();
     driver.findElement(By.id("email")).clear();
-    driver.findElement(By.id("email")).sendKeys("hello.pramod.kum42@yopmail.com");
+    driver.findElement(By.id("email")).sendKeys("hello.pramod.ku3@yopmail.com");
     Thread.sleep(1000);
     driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).clear();
@@ -40,7 +37,7 @@ public class RegisterOnOnetimeMembersWithPaymentTestCase {
     Thread.sleep(1000);
     driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/div/div/button/i")).click();
     Thread.sleep(1000);
-    driver.get("https://checkout.stripe.com/pay/cs_test_a1QrUBVhZ7bRShvobNDTjw3XnFfsAwaj9XWUb6KGhnCrxJIPtnwD8uQ5ZQ#fidkdWxOYHwnPyd1blpxYHZxWjxsbm1DcF9dYk9jdU0yTmY0Sj1tV0JiZCcpJ2hsYXYnP34nYnBsYSc%2FJ2ZmYTNnPGcwKDMwPWEoMWdjYyhnYz03KGc2YzwwNGdmMzE2ZDBmPWFkNScpJ2hwbGEnPydhYWAxPTw8Zyg8M2YwKDEwZmEoPTNnNihkZmQ1NjE1PGc0ZzNkPTZkM2cnKSd2bGEnPyc8MzdkMTA2ZChkND1gKDEzMmMoPGE2NSg8MWNgNmQ0NTxhMmNgND1mMzMneCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqZmpra2BmcWBhK3BkcStofGZqa2tgZnEramlsc2Bid2pwdStsaid4JSUl");
+    driver.get("https://checkout.stripe.com/pay/cs_test_a1P7V4cLiJI1YjGtlKaH1EcLDPGctBgGBqRSQDU2PqarfaimjA4cvQnhkW#fidkdWxOYHwnPyd1blpxYHZxWjxsbm1DcF9dYk9jdU0yTmY0Sj1tV0JiZCcpJ2hsYXYnP34nYnBsYSc%2FJ2Y2Y2dnPWZhKD1nPGAoMTI2MSg9ZDBnKDRmMmM0ZGQ8PDBkNmYzPWdmZicpJ2hwbGEnPycwMjQ0MjEwYChgYTI0KDE2MjYoPDBhNChnNjFhYD02NWA2NDE3NTBjYTInKSd2bGEnPydkPGMyMWYzZihgMjVjKDEwMWAoPTQ3Mig2MTY2N2c0NGQ0MGFjMWY8N2cneCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqZmpra2BmcWBhK3BkcStofGZqa2tgZnEramlsc2Bid2pwdStsaid4JSUl");
     Thread.sleep(1000);
     driver.findElement(By.id("email")).click();
     Thread.sleep(1000);

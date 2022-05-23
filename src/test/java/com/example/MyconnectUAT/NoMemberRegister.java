@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class RegisterOnNoMembershipChargeSettingTestCase {
+public class NoMemberRegister {
   private WebDriver driver;
   private JavascriptExecutor js;
 
@@ -68,6 +68,7 @@ public class RegisterOnNoMembershipChargeSettingTestCase {
     Thread.sleep(1000);
     driver.findElement(By.id("logout")).click();
     Thread.sleep(6000);
+    System.out.println("No embership Charge Setting Learners has been successfully Registered");
     driver.close();
   }
 
